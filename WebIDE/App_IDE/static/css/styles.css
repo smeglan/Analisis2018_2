@@ -1,0 +1,26 @@
+#banner{
+	background-color : black;
+}
+#h1_banner{
+	color : white;
+}
+#btn_run_animation{
+	background-color: forestgreen;
+}
+#btn_guardar, #btn_cargar, #btn_complejidad, #dropdown-algor-desplegable, #dropdown-algor, #btn_run, #btn_arbol{
+	background-color: black;
+	color : white;
+}
+body{
+	background-color: #DADEDF;
+}
+.navbar-dark{
+	background-color: black;
+}
+.navbar-light{
+	background-color: grey;
+}
+
+#h2_puntuacion{
+	color:blue;
+}

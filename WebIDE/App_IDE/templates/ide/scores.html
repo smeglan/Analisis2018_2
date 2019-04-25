@@ -1,0 +1,11 @@
+{% extends "ide/base.html" %}
+{% block content %}
+	<div class="content-section border">
+		{% for score in scores %}
+			<h2 style = "font-weight: bold;"> {{ score.algoritmo.title }}</h2>
+			<img class="rounded-circle article-img" style = "height: 100px; width: 100px" src="{{ score.author.profile.image.url }}">
+			<h4 > Usuario - {{ score.author.username }}</h3>
+			<h2 id = "h2_puntuacion"> Puntuacion {{ score.score }} </h2>
+		{% endfor %}
+	</div>
+{% endblock content %}

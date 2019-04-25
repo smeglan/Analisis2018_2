@@ -1,0 +1,18 @@
+{% extends "ide/base.html" %}
+{% block content %}
+<div class = "content-section">
+	<h1>Play for points!</h1>
+	<form class = "row">
+	{% for line in algoritmo %}
+		<div class = "col-md-6">
+			<p name = "linea-{{ line }}">{{ line }}<p>
+		</div>
+		<div class = "col-md-6">
+			<input name = "entrada-{{ line }}">
+		</div>
+	{% endfor %}
+		<input placeholder = "Respuesta final">
+		<button class = 'btn btn-success' type = "submit">Send</button>
+	</form>
+</div>
+{% endblock content %}

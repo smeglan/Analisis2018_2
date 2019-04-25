@@ -1,0 +1,10 @@
+{% extends "ide/base.html" %}
+{% block content %}
+	<div class = "col-md-12">
+		<h2>Desarrolladores</h2>
+		{% for developer in developers %}
+			<h5>Nombre - {{developer.desarrollador}}</h3>
+			<h5>Email - {{developer.email}}</h3>
+		{% endfor %}
+	</div>
+{% endblock content %}

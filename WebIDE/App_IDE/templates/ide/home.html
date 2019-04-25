@@ -1,0 +1,45 @@
+{% extends "ide/base.html" %}
+{% block content %}
+	<div class="col-md-10">
+		<div class = "">
+			<form action="/addAlgor/" method = 'post'>
+				{% csrf_token %}
+				<textarea style = "min-height: 400px; width: 100%;" name = "algoritmo"></textarea>
+				<textarea style = "min-height: 150px; width: 100%;" readonly>--Console--</textarea>
+				<nav class = "navbar navbar-light">
+					<button id = "btn_run" class="btn">Correr</button>
+					<button id = "btn_run_animation" class="btn">Correr Animacion</button>
+					{% if user.is_authenticated %}
+						<button id = "btn_guardar" class="btn" type="submit">Guardar</button>
+					{% endif %}
+					<div class="dropdown">
+						<button id = "dropdown-algor" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    	Algoritmos
+					  	</button>
+					 	<div id = "dropdown-algor-desplegable" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					  	{% for algoritmo in algoritmos %}
+							<button style="color:white;" class="dropdown-item" type="button" value = {{algoritmo.id}}> {{algoritmo.title}} </button>
+					  	{% endfor %}>
+						</div>
+					</div>
+					<small name = 'user_name' value = "{{ User.username }}"></small>
+				</nav>
+			</form>
+		</div>
+	</div>
+	<div class = "col-md-2">
+		<div>
+			<h4>Variables</h4>
+			<p id = "variables" style = "height: 200px; width:100px;">--</p>
+		</div>
+		<div>
+			<h4>Complejidad</h4>
+			<input placeholder="adivinar" id = "txt_adivinar" disabled = "disabled">
+			<h5>--</h5>
+			<button id ="btn_complejidad" class = "btn" disabled ="disabled">Obtener</button>
+		</div>
+		<div>
+			<button id ="btn_arbol" class = "btn" disabled ="disabled">Desplegar Arbol</button>
+		</div>
+	</div>	
+{% endblock content %}
